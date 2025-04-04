@@ -1,0 +1,21 @@
+[
+    {
+      "alias": "Pixel Art",
+      "filename": "SDXL\\pixel-art-xl-v1.1.safetensors",
+      "recommended_strength": 1,
+      "keywords": ["2d", "pixel", "retro", "sprite"]
+    },
+    {
+      "alias": "Anime Style",
+      "filename": "SDXL\\retanimev1.safetensors",
+      "recommended_strength": 1,
+      "keywords": ["retro anime"]
+    },
+    {
+      "alias": "2D cartoon",
+      "filename": "SDXL\\J_cartoon.safetensors",
+      "recommended_strength": 1,
+      "keywords": ["2D cartoon"]
+    }
+  ]
+  

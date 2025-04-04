@@ -1,0 +1,215 @@
+{
+  "1": {
+    "inputs": {
+      "string": "a cat"
+    },
+    "class_type": "String Literal",
+    "_meta": {
+      "title": "Positive prompt"
+    }
+  },
+  "2": {
+    "inputs": {
+      "string": "blurry, low quality"
+    },
+    "class_type": "String Literal",
+    "_meta": {
+      "title": "Negative prompt"
+    }
+  },
+  "3": {
+    "inputs": {
+      "int": 1024
+    },
+    "class_type": "Int Literal",
+    "_meta": {
+      "title": "Width"
+    }
+  },
+  "4": {
+    "inputs": {
+      "int": 1024
+    },
+    "class_type": "Int Literal",
+    "_meta": {
+      "title": "Height"
+    }
+  },
+  "5": {
+    "inputs": {
+      "ckpt_name": "SDXL\\dreamshaperXL_sfwLightningDPMSDE.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
+  },
+  "6": {
+    "inputs": {
+      "lora_name": "SDXL\\pixel-art-xl-v1.1.safetensors",
+      "strength_model": 0,
+      "strength_clip": 0,
+      "model": [
+        "5",
+        0
+      ],
+      "clip": [
+        "5",
+        1
+      ]
+    },
+    "class_type": "LoraLoader",
+    "_meta": {
+      "title": "Load LoRA"
+    }
+  },
+  "7": {
+    "inputs": {
+      "seed": [
+        "8",
+        0
+      ],
+      "steps": 6,
+      "cfg": 2,
+      "sampler_name": "dpmpp_sde",
+      "scheduler": "karras",
+      "denoise": 1,
+      "model": [
+        "6",
+        0
+      ],
+      "positive": [
+        "9",
+        0
+      ],
+      "negative": [
+        "14",
+        0
+      ],
+      "latent_image": [
+        "11",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler"
+    }
+  },
+  "8": {
+    "inputs": {
+      "seed": 1111332873894103
+    },
+    "class_type": "Seed (rgthree)",
+    "_meta": {
+      "title": "Seed (rgthree)"
+    }
+  },
+  "9": {
+    "inputs": {
+      "text": [
+        "1",
+        0
+      ],
+      "clip": [
+        "6",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "10": {
+    "inputs": {
+      "text": [
+        "2",
+        0
+      ],
+      "clip": [
+        "6",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "11": {
+    "inputs": {
+      "width": [
+        "3",
+        0
+      ],
+      "height": [
+        "4",
+        0
+      ],
+      "batch_size": 1
+    },
+    "class_type": "EmptyLatentImage",
+    "_meta": {
+      "title": "Empty Latent Image"
+    }
+  },
+  "13": {
+    "inputs": {
+      "text": "nsfw, nude, naked, sex, porn, explicit, nipples, genitals, underwear, lingerie, violence, gore, adult content, 18+, mature content, erotic, seductive, inappropriate content",
+      "clip": [
+        "6",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "14": {
+    "inputs": {
+      "conditioning_1": [
+        "10",
+        0
+      ],
+      "conditioning_2": [
+        "13",
+        0
+      ]
+    },
+    "class_type": "ConditioningCombine",
+    "_meta": {
+      "title": "Conditioning (Combine)"
+    }
+  },
+  "15": {
+    "inputs": {
+      "samples": [
+        "7",
+        0
+      ],
+      "vae": [
+        "5",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "16": {
+    "inputs": {
+      "filename_prefix": "NESUPixel/Txt2Img/Txt2Img",
+      "images": [
+        "15",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  }
+}
