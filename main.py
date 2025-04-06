@@ -1,12 +1,15 @@
+# main.py
 import gradio as gr
 from modes.txt2img import create_txt2img_ui
+from modes.inpaint import create_inpaint_ui  # ✅ новый импорт
 from core.settings import GRADIO_HOST, GRADIO_PORT
 
 
 def build_interface():
     with gr.Blocks(title="NESUPixel") as app:
-        gr.Markdown("# NESUPixel \U0001F4F7 - Text-to-Image Generator")
+        gr.Markdown("# NESUPixel 📷 - Image Generation Platform")
         create_txt2img_ui()
+        create_inpaint_ui()  # ✅ добавляем вкладку inpaint
     return app
 
 

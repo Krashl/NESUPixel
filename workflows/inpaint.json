@@ -1,7 +1,7 @@
 {
   "1": {
     "inputs": {
-      "string": "The cosmic sky"
+      "string": ""
     },
     "class_type": "String Literal",
     "_meta": {
@@ -19,7 +19,7 @@
   },
   "3": {
     "inputs": {
-      "image": "clipspace/clipspace-mask-8853058.400000006.png [input]",
+      "image": "example.png",
       "upload": "image"
     },
     "class_type": "LoadImage",
@@ -29,7 +29,7 @@
   },
   "4": {
     "inputs": {
-      "image": "image (12).png",
+      "image": "example.png",
       "upload": "image"
     },
     "class_type": "LoadImage",
@@ -186,7 +186,7 @@
   },
   "16": {
     "inputs": {
-      "filename_prefix": "NESUPixel/Txt2Img/Inpaint",
+      "filename_prefix": "NESUPixel/Inpaint/Inpaint",
       "images": [
         "33",
         0
@@ -271,7 +271,7 @@
     "inputs": {
       "context_expand_pixels": 20,
       "context_expand_factor": 1,
-      "fill_mask_holes": true,
+      "fill_mask_holes": false,
       "blur_mask_pixels": 16,
       "invert_mask": false,
       "blend_pixels": 16,
